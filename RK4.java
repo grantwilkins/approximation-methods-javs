@@ -1,6 +1,9 @@
 import java.util.Scanner;
+import javax.xml.transform.*;
+import javax.xml.transform.stream.StreamSource;
 public class RK4 
 {	private double step, xinit, yinit, xfinal;
+	private StreamSource function;
 	public RK4(double step, double xinit, double yinit, double xfinal)
 	{
 		this.step = step;
@@ -8,7 +11,7 @@ public class RK4
 		this.yinit = yinit;
 		this.xfinal = xfinal;
 	}
-	public static double f(double x, double y)
+	public double f(double x, double y)
 	{
 		//Here you can change your function that you want to approximate.
 		//Make sure your dy/dx is completely isolated before inputting the function.
